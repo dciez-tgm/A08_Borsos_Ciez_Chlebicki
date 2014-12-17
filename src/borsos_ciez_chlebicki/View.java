@@ -6,7 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * @author Robert Borsos
+ * @author Robert Borsos, Dominik Chlebicki
  * @version 16-12-2014
  * 
  */
@@ -15,15 +15,24 @@ public class View extends JFrame{
 	private Controller c;
 	private Model m;
 	private Panel p;
+	JButton newGame;
+	private Container northMenu;
+	private JLabel gameStats;
 	
-
 	public View(Controller c, Model m){
 		this.c = c;
 		this.m = m;
 		this.p = new Panel(this.c);
-				
+		
+		this.northMenu.setLayout(new FlowLayout());
+		this.northMenu.add(newGame);
+		this.northMenu.add(gameStats);
+		this.setLayout(new GridLayout());
+		this.add(p, BorderLayout.CENTER);
+		this.add(northMenu, BorderLayout.NORTH);
+		
+		this.setTitle("Lights Out by Borsos, Ciez, Chlebicki");
 		this.setSize(500, 500);
-		this.setLayout(new GridLayout(1, 1));
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		this.add(p);
@@ -38,7 +47,7 @@ public class View extends JFrame{
 	 * @return Returns a specific button in the buttons-array through the Panel-class.
 	 */
 	public JButton getButtons(int i, int j){
-		return this.p.getButtons(i, j);
+		return this.p.getButtons(i, j); 
 	}
 	
 	

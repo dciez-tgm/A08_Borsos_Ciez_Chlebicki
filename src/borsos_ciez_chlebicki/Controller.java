@@ -20,19 +20,16 @@ public class Controller implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		for(int i=0; i<5; i++){
 			for(int j=0; j<5; j++){
-				if(e.getSource() == v.getButtons(i, j)){
+				if(e.getSource() == v.getButtons(i, j)){		//Listener für das Button-Array 
 					System.out.println("Button: "+i+"-"+j);
 					
 					m.invert(i, j);
 					v.updateTiles(m.getTiles());
 				}
-				if(e.getSource() == v.newGame){ 		//Noch nicht existenter Button zum neustarten des Spiels
-					m.newGame();
+				if(e.getSource() == v.newGame){ 				//Button zum neustarten des Spiels
+				//	m.newGame();
 				} 
 			}
 		}
 	}
-	
-	
-
 }
