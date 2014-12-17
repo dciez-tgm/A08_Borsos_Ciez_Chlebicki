@@ -15,7 +15,7 @@ public class View extends JFrame{
 	private Controller c;
 	private Model m;
 	private Panel p;
-	JButton newGame;
+	private JButton newGame;
 	private Container northMenu;
 	private JLabel gameStats;
 	
@@ -24,18 +24,16 @@ public class View extends JFrame{
 		this.m = m;
 		this.p = new Panel(this.c);
 		
-		this.northMenu.setLayout(new FlowLayout());
-		this.northMenu.add(newGame);
+		this.northMenu.setLayout(new FlowLayout()); 	//North Menu mit Button für Neustart und Statistik
+		this.northMenu.add(getNewGame());				
 		this.northMenu.add(gameStats);
-		this.setLayout(new GridLayout());
+		this.setLayout(new BorderLayout());				//Layout des ganzen Frames setzen.
 		this.add(p, BorderLayout.CENTER);
 		this.add(northMenu, BorderLayout.NORTH);
 		
 		this.setTitle("Lights Out by Borsos, Ciez, Chlebicki");
 		this.setSize(500, 500);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		this.add(p);
 		
 		this.setVisible(true);
 	}
@@ -57,5 +55,15 @@ public class View extends JFrame{
 	 */
 	public void updateTiles(Boolean[][] tiles){
 		p.setTiles(tiles);
+	}
+
+
+	public JButton getNewGame() {
+		return newGame;
+	}
+
+
+	public void setNewGame(JButton newGame) {
+		this.newGame = newGame;
 	}
 }

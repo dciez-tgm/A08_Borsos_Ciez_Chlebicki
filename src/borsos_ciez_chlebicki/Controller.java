@@ -26,7 +26,7 @@ public class Controller implements ActionListener{
 					m.invert(i, j);
 					v.updateTiles(m.getTiles());
 				}
-				if(e.getSource() == v.newGame){ 				//Button zum neustarten des Spiels
+				if(e.getSource() == v.getNewGame()){ 				//Button zum neustarten des Spiels
 				//	m.newGame();
 				} 
 			}
