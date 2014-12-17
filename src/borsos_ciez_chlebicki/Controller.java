@@ -26,6 +26,9 @@ public class Controller implements ActionListener{
 					m.invert(i, j);
 					v.updateTiles(m.getTiles());
 				}
+/*				if(e.getSource() == v.newGame){ 		//Noch nicht existenter Button zum neustarten des Spiels
+					m.newGame();
+				} */
 			}
 		}
 	}
