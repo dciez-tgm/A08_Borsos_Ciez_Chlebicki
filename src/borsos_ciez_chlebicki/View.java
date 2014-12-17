@@ -25,6 +25,9 @@ public class View extends JFrame{
 		this.p = new Panel(this.c);
 		
 		//Hier ist ein Bug
+		this.northMenu = new Container();
+		this.newGame = new JButton("Start New Game");
+		this.gameStats = new JLabel("Clicks: " + "NOT IMPLEMENTED YET");
 		this.northMenu.setLayout(new FlowLayout()); 	//North Menu mit Button für Neustart und Statistik
 		this.northMenu.add(getNewGame());				
 		this.northMenu.add(gameStats);
