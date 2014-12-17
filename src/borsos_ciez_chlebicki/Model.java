@@ -85,6 +85,51 @@ public class Model {
 
 	}
 	
+	/**
+	 * This method sets the tiles in the right order, in case of a new game.
+	 */
+	public void setUpTiles(){
+		for(int i=0; i<5; i++){
+			for(int j=0; j<5; j++){
+				this.tiles[i][j] = Boolean.FALSE;
+			}
+		}
+		this.tiles[1][1] = Boolean.TRUE;
+		this.tiles[1][2] = Boolean.TRUE;
+		this.tiles[1][3] = Boolean.TRUE;
+		this.tiles[2][1] = Boolean.TRUE;
+		this.tiles[2][3] = Boolean.TRUE;
+		this.tiles[3][1] = Boolean.TRUE;
+		this.tiles[3][2] = Boolean.TRUE;
+		this.tiles[3][3] = Boolean.TRUE;
+	}
+	
+	/**
+	 * This method checks the tiles array, if there're still lights on.
+	 */
+	public void pruefen(){
+		a:for(int i=0; i<5; i++){
+			for(int j=0; j<5; j++){
+				if(this.tiles[i][j] == Boolean.FALSE){
+					break a;
+				}
+			}
+		}
+		
+		for(int i=0; i<5; i++){
+			for(int j=0; j<5; j++){
+				this.tiles[i][j] = Boolean.FALSE;
+			}
+		}
+		//"drawing" a smiley
+		this.tiles[1][1] = Boolean.TRUE;
+		this.tiles[1][3] = Boolean.TRUE;
+		this.tiles[3][0] = Boolean.TRUE;
+		this.tiles[4][1] = Boolean.TRUE;
+		this.tiles[4][2] = Boolean.TRUE;
+		this.tiles[4][3] = Boolean.TRUE;
+		this.tiles[3][4] = Boolean.TRUE;
+	}
 	
 	/**
 	 * @return Returns the whole tiles-array.
